@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LES SECRETS DE L'INFORMATIQUE - Votre guide indispensable</title>
+    <meta name="description" content="Découvrez les secrets de l'informatique et propulsez votre carrière. Un guide complet pour réussir dans le monde numérique.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Styles CSS */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #bbb 1px solid;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+
+        .main-content img {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .description {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        .btn {
+            background-color: #5cb85c;
+            color: #fff;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .whatsapp-button img {
+            width: 50px;
+            height: auto;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .whatsapp-button img {
+                width: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>LES SECRETS DE L'INFORMATIQUE</h1>
+        </div>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+            <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k521mykeeqwrdffwhdxv8s10%2F1757784305_img_1.webp?st=2025-09-13T15%3A39%3A03Z&se=2025-09-19T16%3A39%3A03Z&sks=b&skt=2025-09-13T15%3A39%3A03Z&ske=2025-09-19T16%3A39%3A03Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=cfbc986b-d2bc-4088-8b71-4f962129715b&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=%2FLETa%2F9pZFlGIRSkJG2NKYVuPXZtmEO9veMvLiFkQqQ%3D&az=oaivgprodscus" alt="Couverture du livre LES SECRETS DE L'INFORMATIQUE">
+            <div class="description">
+                <p>Vous rêvez de maîtriser l'informatique ? Ce livre est votre clé ! Découvrez des astuces méconnues, des techniques avancées et des stratégies éprouvées pour exceller dans le monde numérique. Ne laissez pas passer cette opportunité unique de transformer vos compétences et votre carrière.</p>
+                <a href="https://kevinkonu.gumroad.com/l/gqxqsc" class="btn">Acheter maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/22892598260" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactez-nous sur WhatsApp">
+    </a>
+
+    <script>
+        // JavaScript (peut être utilisé pour des interactions plus complexes)
+        // Exemple: Animation au survol du bouton d'achat
+        const buyButton = document.querySelector('.btn');
+        buyButton.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#449d44'; // Changer la couleur au survol
+        });
+        buyButton.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#5cb85c'; // Revenir à la couleur initiale
+        });
+    </script>
+</body>
+
+</html>
