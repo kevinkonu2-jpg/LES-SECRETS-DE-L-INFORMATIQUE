@@ -3,698 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LES SECRETS DE L'INFORMATIQUE - Maîtrisez l'Art du Numérique</title>
-    <meta name="description" content="Découvrez les techniques secrètes des professionnels de l'informatique. E-book complet avec astuces, stratégies et méthodes pour exceller dans le monde numérique.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4f46e5;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #4f46e5;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-primary {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Book Preview Section */
-        .book-preview {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .preview-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .book-cover {
-            text-align: center;
-        }
-
-        .book-cover img {
-            max-width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            transform: perspective(1000px) rotateY(-15deg);
-            transition: transform 0.3s;
-        }
-
-        .book-cover img:hover {
-            transform: perspective(1000px) rotateY(0deg) scale(1.05);
-        }
-
-        .book-details h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .book-details p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .feature {
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #4f46e5;
-        }
-
-        .feature h3 {
-            color: #4f46e5;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Table of Contents */
-        .toc {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .toc h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .toc-chapter {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .chapter-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .chapter-title {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Author Section */
-        .author {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .author-content {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .author-photo {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-        }
-
-        .author-bio h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .testimonial::before {
-            content: '"';
-            font-size: 4rem;
-            color: #4f46e5;
-            position: absolute;
-            top: -10px;
-            left: 20px;
-        }
-
-        .testimonial-content {
-            margin-top: 1rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #4f46e5;
-        }
-
-        /* Price Section */
-        .pricing {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .price-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 20px;
-            max-width: 500px;
-            margin: 0 auto;
-            backdrop-filter: blur(10px);
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.5rem;
-        }
-
-        .new-price {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .guarantee {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .faq h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .faq-item {
-            margin-bottom: 2rem;
-            border: 1px solid #e1e5e9;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .faq-question:hover {
-            background: #e9ecef;
-        }
-
-        .faq-answer {
-            padding: 1.5rem;
-            background: white;
-            border-top: 1px solid #e1e5e9;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #4f46e5;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .preview-grid,
-            .author-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    <title>LES SECRETS DE L'INFORMATIQUE | Guide Complet pour Débutants et Experts</title>
+    <meta name="description" content="Découvrez les secrets de l'informatique avec KEVIN KONU. Guide pratique avec astuces experts, garantie 30 jours satisfait ou remboursé.">
+    <meta name="keywords" content="informatique, guide, formation, astuces, secrets, KEVIN KONU, livre informatique">
+    <meta name="author" content="KEVIN KONU">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="LES SECRETS DE L'INFORMATIQUE | Guide Complet">
+    <meta property="og:description" content="Maîtrisez l'informatique comme un expert avec notre guide complet">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secretsinformatique.netlify.app">
+    <meta property="og:image" content="https://secretsinformatique.netlify.app/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">💻 LES SECRETS DE L'INFORMATIQUE</div>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#livre">Le Livre</a></li>
-                <li><a href="#auteur">Auteur</a></li>
-                <li><a href="#temoignages">Témoignages</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/+22892598260" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Les Secrets de l'Informatique</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#accueil">Accueil</a>
+                <a href="#livre">Le Livre</a>
+                <a href="#auteur">L'Auteur</a>
+                <a href="#temoignages">Témoignages</a>
+                <a href="#contact" class="cta-nav">Acheter Maintenant</a>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="accueil">
+    <section id="accueil" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Les Secrets de l'Informatique</h1>
-                <p class="hero-subtitle">Découvrez les techniques que 95% des utilisateurs ignorent pour devenir un expert du numérique</p>
-                <a href="#commande" class="cta-primary">🚀 Obtenir le livre maintenant</a>
+                <h1>Déverrouillez les <span>Secrets de l'Informatique</span></h1>
+                <p>Transformez votre compréhension de l'informatique avec le guide ultime qui révèle tout ce qu'on ne vous a jamais appris</p>
+                <div class="hero-buttons">
+                    <a href="#achat" class="cta-button vibrate">
+                        <i class="fas fa-shopping-cart"></i>
+                        Acheter Maintenant - 10$
+                    </a>
+                    <a href="#feuilleter" class="secondary-button">
+                        <i class="fas fa-book-open"></i>
+                        Feuilleter un extrait
+                    </a>
+                </div>
+                <div class="hero-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Garantie 30 jours satisfait ou remboursé</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/couverture.webp" alt="Couverture du livre Les Secrets de l'Informatique" loading="eager">
             </div>
         </div>
     </section>
 
-    <!-- Book Preview -->
-    <section class="book-preview" id="livre">
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <div class="preview-grid">
+            <h2>Ce que vous allez découvrir</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-lock-open"></i>
+                    <h3>Secrets Dévoilés</h3>
+                    <p>Accédez aux techniques que seuls les experts connaissent</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Apprentissage Progressif</h3>
+                    <p>Du débutant absolu au niveau expert en un seul livre</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Pratique & Concret</h3>
+                    <p>Des exercices et cas réels pour chaque concept</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Accès Illimité</h3>
+                    <p>Revenez sur les concepts autant que nécessaire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="livre" class="book-section">
+        <div class="container">
+            <div class="book-content">
                 <div class="book-cover">
-                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k5af0mbme2mtpk3wwn71dsvn%2F1758066786_img_0.webp?st=2025-09-16T22%3A44%3A27Z&se=2025-09-22T23%3A44%3A27Z&sks=b&skt=2025-09-16T22%3A44%3A27Z&ske=2025-09-22T23%3A44%3A27Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=Z7R5zIEPil%2Fk2hZsNg6iLkJ12yF6lzjtn94LxUje%2BFw%3D&az=oaivgprodscus" alt="Couverture du livre">
+                    <img src="images/og-image.jpg" alt="Couverture détaillée du livre" loading="lazy">
+                    <div class="book-badge">
+                        <i class="fas fa-star"></i>
+                        Best-Seller
+                    </div>
                 </div>
                 <div class="book-details">
-                    <h2>Un Guide Complet pour Maîtriser l'Informatique de A à Z</h2>
-                    <p>Vous en avez assez de vous sentir dépassé par la technologie ? Ce livre révèle les secrets que les professionnels utilisent au quotidien pour exceller dans le monde numérique.</p>
+                    <h2>Votre Passage Vers l'Excellence Informatique</h2>
+                    <p>Ce livre de 118 pages a été spécialement conçu pour démystifier l'informatique et vous donner des compétences immédiatement applicables.</p>
                     
-                    <div class="features">
+                    <div class="book-features">
                         <div class="feature">
-                            <h3>🎯 Techniques Avancées</h3>
-                            <p>Apprenez les raccourcis et astuces utilisés par les experts</p>
+                            <i class="fas fa-check-circle"></i>
+                            <span>118 pages de contenu premium</span>
                         </div>
                         <div class="feature">
-                            <h3>📚 117+ Pages</h3>
-                            <p>Contenu détaillé avec exemples pratiques</p>
+                            <i class="fas fa-check-circle"></i>
+                            <span>50+ exercices pratiques</span>
                         </div>
                         <div class="feature">
-                            <h3>💡 Méthodes Éprouvées</h3>
-                            <p>Stratégies testées et validées par des professionnels</p>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Accès à la communauté privée</span>
                         </div>
                         <div class="feature">
-                            <h3>🔧 Outils Secrets</h3>
-                            <p>Découvrez les logiciels et ressources méconnus</p>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Mises à jour gratuites à vie</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing">
+                        <div class="old-price">19,99$</div>
+                        <div class="current-price">9,99$</div>
+                        <div class="discount">-50% aujourd'hui seulement</div>
+                    </div>
+
+                    <a href="#achat" class="cta-button-large vibrate">
+                        <i class="fas fa-bolt"></i>
+                        OBTENIER MON EXEMPLAIRE MAINTENANT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="testimonials">
+        <div class="container">
+            <h2>Ils ont transformé leur compréhension</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Ce livre a révolutionné ma façon de travailler. Les astuces du chapitre 4 m'ont fait gagner 10 heures par semaine !"</p>
+                        <div class="testimonial-author">
+                            <strong>Marie L.</strong>
+                            <span>Designer Graphique</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Table of Contents -->
-    <section class="toc">
-        <div class="container">
-            <h2>Ce Que Vous Allez Apprendre</h2>
-            <div class="toc-grid">
-                <div class="toc-chapter">
-                    <div class="chapter-number">01</div>
-                    <h3 class="chapter-title">Les Fondamentaux Cachés</h3>
-                    <p>Maîtrisez les bases que personne ne vous enseigne à l'école</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Enfin un guide qui explique les concepts complexes avec simplicité. Indispensable pour tout professionnel !"</p>
+                        <div class="testimonial-author">
+                            <strong>Thomas P.</strong>
+                            <span>Chef de Projet</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="toc-chapter">
-                    <div class="chapter-number">02</div>
-                    <h3 class="chapter-title">Raccourcis de Pro</h3>
-                    <p>Gagnez des heures chaque jour avec ces techniques secrètes</p>
-                </div>
-                <div class="toc-chapter">
-                    <div class="chapter-number">03</div>
-                    <h3 class="chapter-title">Sécurité Avancée</h3>
-                    <p>Protégez-vous comme un expert en cybersécurité</p>
-                </div>
-                <div class="toc-chapter">
-                    <div class="chapter-number">04</div>
-                    <h3 class="chapter-title">Optimisation Système</h3>
-                    <p>Boostez les performances de votre ordinateur</p>
-                </div>
-                <div class="toc-chapter">
-                    <div class="chapter-number">05</div>
-                    <h3 class="chapter-title">Outils Méconnus</h3>
-                    <p>Découvrez les logiciels que les pros gardent secrets</p>
-                </div>
-                <div class="toc-chapter">
-                    <div class="chapter-number">06</div>
-                    <h3 class="chapter-title">Automatisation</h3>
-                    <p>Automatisez vos tâches répétitives en quelques clics</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"La section sur la sécurité informatique vaut à elle seule le prix du livre. Une mine d'or d'informations !"</p>
+                        <div class="testimonial-author">
+                            <strong>Sophie K.</strong>
+                            <span>Entrepreneure</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Author Section -->
-    <section class="author" id="auteur">
+    <section id="auteur" class="author">
         <div class="container">
             <div class="author-content">
-                <div class="author-photo">
-                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k5ahq3gvfhgts84rrg69z9kb%2F1758069610_img_1.webp?st=2025-09-16T22%3A45%3A52Z&se=2025-09-22T23%3A45%3A52Z&sks=b&skt=2025-09-16T22%3A45%3A52Z&ske=2025-09-22T23%3A45%3A52Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=b4ab33b8-2ad4-40af-8ed0-a2b350b6603c&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=BU7pOwv8AxXSCx6dEuDSj7DjEOrS6rLB%2BEiyxV7qSyg%3D&az=oaivgprodscus" alt="Kevin Konu" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <div class="author-image">
+                    <img src="images/auteur.webp" alt="Kévin Konu - Expert en Informatique" loading="lazy">
                 </div>
-                <div class="author-bio">
-                    <h2>À Propos de l'Auteur</h2>
-                    <p><strong>Kévin KONU</strong> est un expert en informatique avec plus de 10 ans d'expérience dans le domaine. Formateur certifié et consultant pour de nombreuses entreprises, il a aidé des milliers de personnes à maîtriser les outils numériques.</p>
-                    
-                    <p>Ses compétences incluent :</p>
-                    <ul style="margin: 1rem 0; padding-left: 2rem;">
-                        <li>🏆 Certification Microsoft & Google</li>
-                        <li>💼 Consultant en transformation digitale</li>
-                        <li>📖 Formateur agréé depuis 2015</li>
-                        <li>🎯 +500 étudiants formés</li>
-                    </ul>
+                <div class="author-info">
+                    <h2>KEVIN KONU</h2>
+                    <h3>Expert en Pédagogie Informatique</h3>
+                    <p>Avec <strong>plus de 10 ans d'expérience</strong> dans la formation et le conseil en informatique, KEVIN a aidé des milliers de personnes à maîtriser les technologies digitales.</p>
+                    <p>Diplômé en Ingénierie Informatique et passionné par l'enseignement, il a développé une méthode unique qui transforme les concepts complexes en apprentissages simples et accessibles.</p>
+                    <p>Son mantra : <em>"La véritable maîtrise vient de la capacité à expliquer simplement les concepts les plus complexes."</em></p>
+                    <div class="author-credentials">
+                        <div class="credential">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Master en Informatique</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-users"></i>
+                            <span>500+ étudiants formés</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-star"></i>
+                            <span>Formateur Certifié</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="temoignages">
-        <div class="container">
-            <h2>Ce Que Disent Nos Lecteurs</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        Ce livre a complètement changé ma façon d'utiliser mon ordinateur. Les techniques présentées sont bluffantes !
-                    </div>
-                    <div class="testimonial-author">- Marie D., Comptable</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        Enfin un livre qui explique clairement les secrets de l'informatique. Je recommande vivement !
-                    </div>
-                    <div class="testimonial-author">- Paul M., Entrepreneur</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        Grâce aux conseils de ce livre, j'ai doublé ma productivité au bureau. Merci Kevin !
-                    </div>
-                    <div class="testimonial-author">- Sophie L., Manager</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing" id="commande">
-        <div class="container">
-            <h2 style="margin-bottom: 2rem;">Obtenez Votre Exemplaire Maintenant</h2>
-            <div class="price-box">
-                <p>Prix habituel : <span class="old-price">35 000 FCFA</span></p>
-                <div class="new-price">15 000 FCFA</div>
-                <p style="margin-bottom: 2rem;">⏰ Offre limitée - Économisez 20 000 FCFA</p>
-                
-                <a href="https://kevinkonu.gumroad.com/l/gqxqsc" class="cta-primary" style="display: block; margin-bottom: 2rem;">
-                    💳 Acheter Maintenant
-                </a>
-                
-                <div class="guarantee">
-                    <h3>🛡️ Garantie 30 jours</h3>
-                    <p>Satisfait ou remboursé intégralement</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
+    <!-- FAQ Section -->
+    <section class="faq">
         <div class="container">
             <h2>Questions Fréquentes</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">📖 Dans quel format est disponible le livre ?</div>
-                <div class="faq-answer">Le livre est disponible en format PDF téléchargeable immédiatement après achat. Compatible avec tous les appareils.</div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Le livre est-il adapté aux débutants complets ?</h3>
+                    <p>Absolument ! Le livre commence par les bases fondamentales et progresse vers des concepts avancés, ce qui le rend parfait pour tous les niveaux.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Comment recevrai-je mon livre ?</h3>
+                    <p>Vous recevrez instantanément un lien de téléchargement PDF après votre achat, ainsi qu'un accès à la version en ligne.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Y a-t-il une garantie ?</h3>
+                    <p>Oui, garantie 30 jours satisfait ou remboursé. Si le livre ne vous apporte pas de valeur, nous vous remboursons intégralement.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Puis-je poser des questions à l'auteur ?</h3>
+                    <p>Oui ! Les acheteurs du livre ont accès à un groupe privé où vous pouvez interagir directement avec KEVIN.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="achat" class="cta-final">
+        <div class="container">
+            <h2>Prêt à Maîtriser l'Informatique ?</h2>
+            <p>Rejoignez les milliers de personnes qui ont transformé leurs compétences informatiques</p>
             
-            <div class="faq-item">
-                <div class="faq-question">💻 Dois-je avoir des connaissances avancées ?</div>
-                <div class="faq-answer">Non ! Le livre est conçu pour tous les niveaux, des débutants aux utilisateurs intermédiaires.</div>
+            <div class="pricing-final">
+                <div class="old-price">19,99$</div>
+                <div class="current-price">9,99$</div>
+                <div class="discount">OFFRE SPÉCIALE -50%</div>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">⏱️ Combien de temps pour voir des résultats ?</div>
-                <div class="faq-answer">Vous pourrez appliquer les premières techniques dès la lecture terminée et voir des améliorations immédiates.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">🔄 Y a-t-il des mises à jour ?</div>
-                <div class="faq-answer">Oui, toutes les mises à jour futures sont incluses gratuitement avec votre achat.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">💰 Comment fonctionne la garantie ?</div>
-                <div class="faq-answer">Si vous n'êtes pas satisfait dans les 30 jours, nous vous remboursons intégralement, sans questions.</div>
+
+            <a href="#" class="cta-button-xlarge vibrate">
+                <i class="fas fa-gift"></i>
+                OBTENIR MON EXEMPLAIRE MAINTENANT
+            </a>
+
+            <div class="guarantee-final">
+                <i class="fas fa-shield-alt"></i>
+                <span>Garantie 30 jours satisfait ou remboursé • Support 7j/7</span>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-links">
-                <a href="#contact">Contact</a>
-                <a href="#cgv">CGV</a>
-                <a href="#confidentialite">Confidentialité</a>
-                <a href="#mentions">Mentions légales</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LES SECRETS DE L'INFORMATIQUE</h3>
+                    <p>Votre guide ultime pour maîtriser l'informatique moderne et booster votre productivité.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#livre">Le Livre</a>
+                    <a href="#auteur">L'Auteur</a>
+                    <a href="#temoignages">Témoignages</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <a href="#">Conditions Générales de Vente</a>
+                    <a href="#">Politique de Confidentialité</a>
+                    <a href="#">Mentions Légales</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:entreprise193@gmail.com">entreprise193@gmail.com</a>
+                    <a href="https://wa.me/+22892598260">WhatsApp: +228 92 59 82 60</a>
+                </div>
             </div>
-            <p>&copy; 2024 Les Secrets de l'Informatique. Tous droits réservés.</p>
-            <p>📧 entreprise193@gmail.com | 📱 WhatsApp: +228 92 59 82 60</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Les Secrets de l'Informatique par Kévin Konu. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const isVisible = answer.style.display === 'block';
-                
-                // Hide all answers
-                document.querySelectorAll('.faq-answer').forEach(ans => {
-                    ans.style.display = 'none';
-                });
-                
-                // Show current answer if it wasn't visible
-                if (!isVisible) {
-                    answer.style.display = 'block';
-                }
-            });
-        });
-
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.feature, .toc-chapter, .testimonial').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
